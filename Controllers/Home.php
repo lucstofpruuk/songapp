@@ -2,8 +2,8 @@
 
 class Home extends Controller {
 
-    public static function ShowSongs() {
-        $data = self::query("SELECT * FROM artists");
+    public static function showArtists() {
+
     }
 
 }

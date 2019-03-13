@@ -20,5 +20,7 @@ class Controller
         } else {
             include "Views/$viewName.php";
         }
+
+        $artists = $this->model->showArtists();
     }
 }

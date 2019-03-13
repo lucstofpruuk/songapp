@@ -8,5 +8,4 @@ Route::set('login', function() {
 Route::set('home', function() {
     $home = new Home();
     $home->CreateView('home');
-    $home->ShowSongs();
 });

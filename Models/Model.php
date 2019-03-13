@@ -12,4 +12,9 @@ class Model extends Database
             return false;
         }
     }
+
+    public function showArtists()
+    {
+        $artists = self::query("SELECT * FROM artists");
+    }
 }
