@@ -1,11 +1,24 @@
 <?php
 
-class Controller extends Database {
+include 'Models/Model.php';
 
-    public static function CreateView($viewName) {
-        require_once("./Views/$viewName.php");
+class Controller
+{
+    public $model;
+
+    public function __construct()
+    {
+        $this->model = new Model();
     }
 
-}
+    public function CreateView($viewName)
+    {
+        $login = $this->model->getLogin();
 
-?>
+        if ($login) {
+            include "Views/home.php";
+        } else {
+            include "Views/$viewName.php";
+        }
+    }
+}

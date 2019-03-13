@@ -1,16 +1,12 @@
 <?php
 
-Route::set('index.php', function() {
-    index::CreateView('index');
+Route::set('login', function() {
+    $login = new Login();
+    $login->CreateView('login');
 });
 
 Route::set('home', function() {
-    home::CreateView('home');
-    home::test();
+    $home = new Home();
+    $home->CreateView('home');
+    $home->ShowSongs();
 });
-
-Route::set('test', function() {
-    test::CreateView('test');
-});
-
-?>
