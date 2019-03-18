@@ -1,10 +1,5 @@
 <?php
-require_once ('Routes.php');
+define('WEBROOT', str_replace("songapp/index.php", "", $_SERVER["SCRIPT_NAME"]));
+define('ROOT', str_replace("songapp/index.php", "", $_SERVER["SCRIPT_FILENAME"]));
 
-function __autoload($class_name) {
-    if (file_exists('./classes/'.$class_name.'.php')) {
-        require_once './classes/' . $class_name . '.php';
-    } elseif (file_exists('./Controllers/'.$class_name.'.php')) {
-        require_once  './Controllers/'.$class_name.'.php';
-    }
-}
+require('Autoloader.php');
